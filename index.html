@@ -1,1 +1,523 @@
+<!DOCTYPE html>
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Planova - Modern ve Minimalist Ajanda</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#d68fa0", 
+                        "primary-hover": "#bf7386",
+                        "secondary": "#fdf2f5",
+                        "background-light": "#fffcfd",
+                        "background-dark": "#21181a",
+                        "text-main": "#3d3033",
+                        "text-light": "#7a6b6e",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.6rem",
+                        "xl": "1rem",
+                        "2xl": "1.5rem",
+                        "3xl": "2rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(214, 143, 160, 0.15)',
+                        'card': '0 1px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 2px 0 rgba(0, 0, 0, 0.01)',
+                        'hover': '0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-shadow-sm {
+            text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white font-display overflow-x-hidden selection:bg-primary selection:text-white antialiased">
+<header class="sticky top-0 z-50 bg-white/90 dark:bg-[#21181a]/95 backdrop-blur-xl border-b border-pink-100/50 dark:border-gray-800 transition-all duration-300">
+<div class="px-4 md:px-10 py-5 flex items-center justify-between max-w-[1400px] mx-auto">
+<div class="flex items-center gap-2 group cursor-pointer">
+<div class="text-primary transition-transform group-hover:scale-110 duration-500 ease-out">
+<span class="material-symbols-outlined text-3xl filled-icon">auto_stories</span>
+</div>
+<h2 class="text-text-main dark:text-white text-2xl font-bold tracking-tight group-hover:text-primary transition-colors">Planova</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-semibold text-text-light hover:text-primary transition-colors dark:text-gray-300 tracking-wide" href="#collection">Koleksiyon</a>
+<a class="text-sm font-semibold text-text-light hover:text-primary transition-colors dark:text-gray-300 tracking-wide" href="#features">Özellikler</a>
+<a class="text-sm font-semibold text-text-light hover:text-primary transition-colors dark:text-gray-300 tracking-wide" href="#story">Hikaye</a>
+<a class="text-sm font-semibold text-text-light hover:text-primary transition-colors dark:text-gray-300 tracking-wide" href="#contact">İletişim</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex h-11 px-8 bg-text-main hover:bg-primary text-white dark:bg-white dark:text-[#21181a] dark:hover:bg-primary text-sm font-bold items-center justify-center rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 tracking-wide">
+                Mağaza
+            </button>
+<button class="md:hidden p-2 text-text-main dark:text-white hover:bg-secondary rounded-full transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<section class="relative w-full overflow-hidden">
+<div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[100px] -z-10 translate-x-1/3 -translate-y-1/3 animate-pulse" style="animation-duration: 4s;"></div>
+<div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-secondary rounded-full blur-[80px] -z-10 -translate-x-1/4 translate-y-1/4"></div>
+<div class="px-4 md:px-10 lg:px-40 py-16 md:py-28 flex justify-center">
+<div class="max-w-[1200px] w-full flex flex-col gap-10">
+<div class="rounded-3xl overflow-hidden relative min-h-[600px] flex items-center justify-center text-center p-8 lg:p-16 bg-cover bg-center shadow-2xl shadow-primary/10 transition-transform duration-700 hover:scale-[1.01]" data-alt="Minimalist aesthetic desk setup with planner and coffee" style='background-image: linear-gradient(rgba(45, 36, 38, 0.35), rgba(45, 36, 38, 0.5)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuANkmt2cmYGQR1nAQ13BqAfM-Lk32orhPc7gWFQufv9hfwv3SnR46nzyMO9hfDqYGhtmaqOrNKK_z8ti3TVu7iEQI8F4UhDGWy7lMUfEeYkQPZj2l7B7JeC_CV-N9AqczEUWfl5HhA9bf4EYy2q3zPvqRfDJyaMMx0NgpvQQt3RuiSA_RrA6_qc81Z5iOp2bDXuv5xsuxPmiFLsxGVQ1ughDoW_1ztAynvCAuaZk28krJrrE_Jwuljag5cw4Heq8SQeNNuUy7H3Ug");'>
+<div class="relative z-10 flex flex-col items-center gap-8 max-w-4xl">
+<span class="inline-block py-1.5 px-5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs font-bold tracking-[0.2em] uppercase hover:bg-white/20 transition-colors">Yeni Sezon</span>
+<h1 class="text-white text-5xl md:text-8xl font-black leading-tight tracking-tight drop-shadow-lg">
+                        Planlamanın<br/><span class="text-pink-100 font-serif italic">En Zarif</span> Hali
+                    </h1>
+<p class="text-pink-50 text-lg md:text-2xl font-medium max-w-xl leading-relaxed drop-shadow-md text-shadow-sm">
+                        Hayatınızı sadeleştirin, zihninizi berraklaştırın. Minimalist tasarımın dinginliğiyle her gününüzü yeniden keşfedin.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 mt-4">
+<a class="h-14 px-10 bg-white hover:bg-pink-50 text-text-main text-base font-bold flex items-center justify-center rounded-full transition-all hover:scale-105 shadow-xl hover:shadow-2xl" href="#collection">
+                            Keşfetmeye Başla
+                        </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-white dark:bg-[#1a2615]/0" id="collection">
+<div class="max-w-[1400px] mx-auto px-4 md:px-10">
+<div class="mb-20 flex flex-col md:flex-row justify-between items-end gap-6 border-b border-gray-100 dark:border-gray-800 pb-8">
+<div class="max-w-2xl">
+<span class="text-primary font-bold tracking-wider uppercase text-xs mb-2 block">2024 - 2026</span>
+<h2 class="text-text-main dark:text-white text-4xl md:text-5xl font-bold tracking-tight mb-4">Seçkin Koleksiyon</h2>
+<p class="text-text-light dark:text-gray-400 text-lg">Pastel tonların huzuru, minimalist tasarım ve kapalı format şıklığı.</p>
+</div>
+<a class="hidden md:flex items-center gap-2 text-text-main hover:text-primary font-semibold transition-colors group" href="#">
+                Tümünü Gör 
+                <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">
+<div class="group cursor-pointer">
+<div class="w-full aspect-[4/5] bg-secondary rounded-2xl overflow-hidden mb-5 relative group-hover:shadow-hover transition-all duration-500">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Closed soft pink planner with minimalist design" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBDSQlE-6RWY3MA2DXtwAvgFAjwafCYvRisRhF1XC9t_kqML7xKakxAy7V51ZQYswVQ-B0QltuEFc8ZOiiY6iCNXjQhA_OXFAkE36dzfgidDxtJS3LoxCsGwIivz7qziMW4BR-HcJEhlmmxKnxIFsogVib7IMRYzKhUEBX7WAHWP0oR2ukI2QJclbWUjY9dH75qT_uSY4RxD4eZu964fNN9JO9deWq_Rz0txTf2BS14ZLl-BKy-YmggOK0a2zYBIFPdp7m-II1q5Q");'></div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="text-text-main/50 font-display font-medium text-xs tracking-[0.3em] uppercase mix-blend-multiply opacity-70 transform -rotate-2">Planova</span>
+</div>
+<div class="absolute top-4 left-4">
+<span class="bg-white/90 backdrop-blur text-[10px] font-bold px-3 py-1 rounded-full text-text-main shadow-sm uppercase tracking-wider">Çok Satan</span>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-end bg-gradient-to-t from-black/20 to-transparent">
+<button class="w-11 h-11 bg-white rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-primary hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-baseline">
+<h3 class="text-lg font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Yıllık Ajanda</h3>
+<span class="text-text-main font-semibold">450₺</span>
+</div>
+<p class="text-text-light dark:text-gray-400 text-xs font-medium">Gül Kurusu - A5 - Sert Kapak</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="w-full aspect-[4/5] bg-secondary rounded-2xl overflow-hidden mb-5 relative group-hover:shadow-hover transition-all duration-500">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Closed beige aesthetic planner" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCyA20c9k3kb3OZi9mKBf-oGjk01SdbdP7VFW_eh1RjK1qbhQQph1tBSzdSQJWX3UYOBUM7FmkvoBGzpJVWkB3LfleU13lYr2tMbjZt1CBVNhlMm8aAZSnBwG5ZPYahyffCrJBwgdhpQNdvibUB72VoqWGJXV2i7IRkmWzZVe_tV2bwSCD4B__jIEoF2hJjK3JY6ymJi2Rb94QlC7KNiE32CHN0Wmf58ffcK0k3k_ox1p2D633asJAWs5OLqxUaEund5HGX-DryOA");'></div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="text-text-main/50 font-display font-medium text-xs tracking-[0.3em] uppercase mix-blend-multiply opacity-70 transform rotate-1">Planova</span>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-end bg-gradient-to-t from-black/20 to-transparent">
+<button class="w-11 h-11 bg-white rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-primary hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-baseline">
+<h3 class="text-lg font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Haftalık Ajanda</h3>
+<span class="text-text-main font-semibold">520₺</span>
+</div>
+<p class="text-text-light dark:text-gray-400 text-xs font-medium">Kum Beji - Dokulu Kapak</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="w-full aspect-[4/5] bg-secondary rounded-2xl overflow-hidden mb-5 relative group-hover:shadow-hover transition-all duration-500">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Closed blue luxury notebook" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAA-j4ppqGM66MUBN1EMZm4zRs2AUzI3_PB4TYy9vyC75CjuX4J4gltHAqlb5JYmmcoxK2tMD6qdJCyYDK9HBUmp6pAPhCC17aFm23DeHb7UX0TArxdobhewDReCNGfKgFbvlPSrt9NBx-7qExPhcZLoqUCxvGkWcMmPzxd8FA_56sRzhalVn4Y1kTaDcGMUKWAwDUs0BRCXpoGYY8VMsy_-UgNZjVP8hNanNUU3QFJLkunvHor9eFyr57sYiNN_xYXb-TEo9wVJw");'></div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="text-text-main/50 font-display font-medium text-xs tracking-[0.3em] uppercase mix-blend-multiply opacity-70 transform -rotate-1">Planova</span>
+</div>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/90 backdrop-blur text-[10px] font-bold px-3 py-1 rounded-full text-white shadow-sm uppercase tracking-wider">Yeni</span>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-end bg-gradient-to-t from-black/20 to-transparent">
+<button class="w-11 h-11 bg-white rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-primary hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-baseline">
+<h3 class="text-lg font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Günlük Ajanda</h3>
+<span class="text-text-main font-semibold">380₺</span>
+</div>
+<p class="text-text-light dark:text-gray-400 text-xs font-medium">Buz Mavisi - Keten Kapak</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="w-full aspect-[4/5] bg-secondary rounded-2xl overflow-hidden mb-5 relative group-hover:shadow-hover transition-all duration-500">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Closed sage green notebook" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDbTwoNMhROI97o68HyxvHK_NKESXJ_WNPfm4QffbNgYDSKLZcCSSfCcCx_zgOEug1sgE-SEe6dBTvgxF6vc7Jh63cvqmvTcS_VFMqQKF6qXbtPtMRqKtB184DeOhRTwHPj8mHQq5gp65YIGMkKhGj903kx3yyFv9oTjMf6ysNQv11Hpe3LO7DSSPiWpuXXFDDMIrXioc4q_NGau3GRh-dHOmuK1btTF9PoXyiHOANvgLYVL826MHgvg2jKXZp_JJiZviLajnXGzg");'></div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="text-text-main/50 font-display font-medium text-xs tracking-[0.3em] uppercase mix-blend-multiply opacity-70 transform rotate-2">Planova</span>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-end bg-gradient-to-t from-black/20 to-transparent">
+<button class="w-11 h-11 bg-white rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-primary hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-baseline">
+<h3 class="text-lg font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Akademik Ajanda</h3>
+<span class="text-text-main font-semibold">480₺</span>
+</div>
+<p class="text-text-light dark:text-gray-400 text-xs font-medium">Adaçayı Yeşili - Mat Kapak</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="w-full aspect-[4/5] bg-secondary rounded-2xl overflow-hidden mb-5 relative group-hover:shadow-hover transition-all duration-500">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Closed light grey textured notebook" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuALQ6G0ow_ce7IO3OakJl6BgzcKWEBuXL5_zhpCp9euJDfCtRe1hHb5duNKq4Eq0NCC2qiQppWBNtwwEbfct9KeJyuqkegR9N1QCqOZ90WVjMMWwrBz8Klj8-PDstNW1B1VwOxCDYZq9BikuqAqKBmir_z-LdZWQfWxrZFCZQmVg1fP0O66nuzB1u6F9bglqHVxFnBFZiBGE6Qv28Glx9J1aLRHFCcnMQ3TkSdsCkioHeRFVYeXQzeaA65axqw5RMxBB6HLECNRCQ");'></div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="text-text-main/50 font-display font-medium text-xs tracking-[0.3em] uppercase mix-blend-multiply opacity-70 transform -rotate-1">Planova</span>
+</div>
+<div class="absolute top-4 left-4">
+<span class="bg-gray-800/90 backdrop-blur text-[10px] font-bold px-3 py-1 rounded-full text-white shadow-sm uppercase tracking-wider">Ön Sipariş</span>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-end bg-gradient-to-t from-black/20 to-transparent">
+<button class="w-11 h-11 bg-white rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-primary hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-baseline">
+<h3 class="text-lg font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">2026 Ajandası</h3>
+<span class="text-text-main font-semibold">550₺</span>
+</div>
+<p class="text-text-light dark:text-gray-400 text-xs font-medium">Duman Grisi - Noktalı</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="w-full aspect-[4/5] bg-secondary rounded-2xl overflow-hidden mb-5 relative group-hover:shadow-hover transition-all duration-500">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Closed soft blue planner variant" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAA-j4ppqGM66MUBN1EMZm4zRs2AUzI3_PB4TYy9vyC75CjuX4J4gltHAqlb5JYmmcoxK2tMD6qdJCyYDK9HBUmp6pAPhCC17aFm23DeHb7UX0TArxdobhewDReCNGfKgFbvlPSrt9NBx-7qExPhcZLoqUCxvGkWcMmPzxd8FA_56sRzhalVn4Y1kTaDcGMUKWAwDUs0BRCXpoGYY8VMsy_-UgNZjVP8hNanNUU3QFJLkunvHor9eFyr57sYiNN_xYXb-TEo9wVJw"); filter: hue-rotate(20deg);'></div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="text-text-main/50 font-display font-medium text-xs tracking-[0.3em] uppercase mix-blend-multiply opacity-70 transform rotate-2">Planova</span>
+</div>
+<div class="absolute top-4 left-4">
+<span class="bg-blue-100/90 backdrop-blur text-[10px] font-bold px-3 py-1 rounded-full text-blue-800 shadow-sm uppercase tracking-wider">Yeni Renk</span>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-end bg-gradient-to-t from-black/20 to-transparent">
+<button class="w-11 h-11 bg-white rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-primary hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-baseline">
+<h3 class="text-lg font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Akademik Planlayıcı</h3>
+<span class="text-text-main font-semibold">460₺</span>
+</div>
+<p class="text-text-light dark:text-gray-400 text-xs font-medium">Pastel Mavi - Tarihsiz</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="w-full aspect-[4/5] bg-secondary rounded-2xl overflow-hidden mb-5 relative group-hover:shadow-hover transition-all duration-500">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Closed light pink planner variant" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBDSQlE-6RWY3MA2DXtwAvgFAjwafCYvRisRhF1XC9t_kqML7xKakxAy7V51ZQYswVQ-B0QltuEFc8ZOiiY6iCNXjQhA_OXFAkE36dzfgidDxtJS3LoxCsGwIivz7qziMW4BR-HcJEhlmmxKnxIFsogVib7IMRYzKhUEBX7WAHWP0oR2ukI2QJclbWUjY9dH75qT_uSY4RxD4eZu964fNN9JO9deWq_Rz0txTf2BS14ZLl-BKy-YmggOK0a2zYBIFPdp7m-II1q5Q"); filter: hue-rotate(-15deg) brightness(1.05);'></div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="text-text-main/50 font-display font-medium text-xs tracking-[0.3em] uppercase mix-blend-multiply opacity-70 transform -rotate-1">Planova</span>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-end bg-gradient-to-t from-black/20 to-transparent">
+<button class="w-11 h-11 bg-white rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-primary hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-baseline">
+<h3 class="text-lg font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Günlük Planlayıcı</h3>
+<span class="text-text-main font-semibold">400₺</span>
+</div>
+<p class="text-text-light dark:text-gray-400 text-xs font-medium">Bahar Pembesi - Dokulu</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="w-full aspect-[4/5] bg-secondary rounded-2xl overflow-hidden mb-5 relative group-hover:shadow-hover transition-all duration-500">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="Closed cream notebook variant" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCyA20c9k3kb3OZi9mKBf-oGjk01SdbdP7VFW_eh1RjK1qbhQQph1tBSzdSQJWX3UYOBUM7FmkvoBGzpJVWkB3LfleU13lYr2tMbjZt1CBVNhlMm8aAZSnBwG5ZPYahyffCrJBwgdhpQNdvibUB72VoqWGJXV2i7IRkmWzZVe_tV2bwSCD4B__jIEoF2hJjK3JY6ymJi2Rb94QlC7KNiE32CHN0Wmf58ffcK0k3k_ox1p2D633asJAWs5OLqxUaEund5HGX-DryOA"); filter: contrast(0.95) brightness(1.05);'></div>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="text-text-main/50 font-display font-medium text-xs tracking-[0.3em] uppercase mix-blend-multiply opacity-70 transform rotate-1">Planova</span>
+</div>
+<div class="absolute top-4 left-4">
+<span class="bg-gray-100/90 backdrop-blur text-[10px] font-bold px-3 py-1 rounded-full text-gray-600 shadow-sm uppercase tracking-wider">İndirim</span>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex justify-end bg-gradient-to-t from-black/20 to-transparent">
+<button class="w-11 h-11 bg-white rounded-full flex items-center justify-center text-primary shadow-lg hover:bg-primary hover:text-white transition-colors duration-300">
+<span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between items-baseline">
+<h3 class="text-lg font-bold text-text-main dark:text-white group-hover:text-primary transition-colors">Fikir Defteri</h3>
+<span class="text-text-main font-semibold">320₺</span>
+</div>
+<p class="text-text-light dark:text-gray-400 text-xs font-medium">Vanilya - Çizgisiz</p>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center md:hidden">
+<a class="inline-flex items-center gap-2 text-primary font-bold border-b-2 border-primary/20 pb-1 hover:border-primary transition-colors" href="#">
+                Tüm Koleksiyonu Görüntüle
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<section class="py-24 bg-secondary/50 dark:bg-background-dark relative overflow-hidden" id="features">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_10%_20%,_rgba(214,143,160,0.03)_0%,_transparent_40%)]"></div>
+<div class="max-w-7xl mx-auto px-4 md:px-10 lg:px-40 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<div class="order-2 lg:order-1 relative group">
+<div class="absolute -inset-6 bg-white rounded-[2.5rem] -rotate-3 group-hover:rotate-0 transition-transform duration-700 shadow-soft"></div>
+<div class="absolute -inset-6 bg-primary/10 rounded-[2.5rem] rotate-3 group-hover:rotate-0 transition-transform duration-700 delay-75"></div>
+<div class="relative w-full aspect-square bg-white rounded-3xl overflow-hidden shadow-card" data-alt="Open planner showing high quality paper texture and layout" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDiJvcB1UgTkM_jt-qXARgeJDis-J5jmWNsNrarLBRsvA-ydDXf1ejl8H0TkH9VVeIucWx-LNarhgk_hq8TglU7QQF2s_L_GzRzdeRzL_NGwH9imNz_w8AM9ULN7cJzFktPv9AMU_6OIXr9yZsRBCJye4ja8jeRfNyPbIjqhntUTds1EMiVsF7JP8kEXjnqksI9Q_0vo3bO7g0YSVo_9WJa0pqdfZ_jaCng9Ol8XvCcEyPgJRuDO0f9be-aDDhCSJ0SiSF48vlfjg"); background-size: cover; background-position: center;'>
+</div>
+</div>
+<div class="order-1 lg:order-2 flex flex-col gap-10">
+<div>
+<span class="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Üstün Kalite</span>
+<h2 class="text-text-main dark:text-white text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">Her Detayda<br/>Mükemmellik</h2>
+<p class="text-text-light dark:text-gray-300 text-lg leading-relaxed font-light">
+                        Planova ajandaları, sadece bir defter değil, düşüncelerinizi onurlandıran birer yaşam alanıdır. Kağıdın dokusundan cildin esnekliğine kadar her şey kusursuz bir deneyim için.
+                    </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
+<div class="flex gap-5 items-start">
+<div class="w-14 h-14 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center text-primary shadow-sm shrink-0 ring-1 ring-gray-100 dark:ring-gray-700">
+<span class="material-symbols-outlined text-2xl">description</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-white text-lg mb-2">120gsm Fildişi</h4>
+<p class="text-sm text-text-light dark:text-gray-400 leading-relaxed">Mürekkebi geçirmeyen, ipeksi dokuya sahip premium kağıt.</p>
+</div>
+</div>
+<div class="flex gap-5 items-start">
+<div class="w-14 h-14 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center text-primary shadow-sm shrink-0 ring-1 ring-gray-100 dark:ring-gray-700">
+<span class="material-symbols-outlined text-2xl">menu_book</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-white text-lg mb-2">Lay-Flat Cilt</h4>
+<p class="text-sm text-text-light dark:text-gray-400 leading-relaxed">180° tam açılan tasarım ile kesintisiz yazma keyfi.</p>
+</div>
+</div>
+<div class="flex gap-5 items-start">
+<div class="w-14 h-14 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center text-primary shadow-sm shrink-0 ring-1 ring-gray-100 dark:ring-gray-700">
+<span class="material-symbols-outlined text-2xl">eco</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-white text-lg mb-2">Vegan Deri</h4>
+<p class="text-sm text-text-light dark:text-gray-400 leading-relaxed">Doğa dostu, dayanıklı ve zarif dokulu kapak seçenekleri.</p>
+</div>
+</div>
+<div class="flex gap-5 items-start">
+<div class="w-14 h-14 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center text-primary shadow-sm shrink-0 ring-1 ring-gray-100 dark:ring-gray-700">
+<span class="material-symbols-outlined text-2xl">palette</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-white text-lg mb-2">Soft Tonlar</h4>
+<p class="text-sm text-text-light dark:text-gray-400 leading-relaxed">Göz yormayan, dinginleştiren özel renk paleti.</p>
+</div>
+</div>
+</div>
+<div class="p-8 bg-white dark:bg-gray-800 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-sm mt-4">
+<p class="text-sm font-bold mb-6 text-text-main dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">brush</span>
+                        Renk Paleti
+                    </p>
+<div class="flex flex-wrap gap-4">
+<div class="group relative">
+<div class="w-12 h-12 rounded-full bg-[#d68fa0] shadow-inner cursor-pointer border-[3px] border-white ring-1 ring-gray-200 transition-transform group-hover:scale-110"></div>
+<span class="absolute -bottom-9 left-1/2 -translate-x-1/2 text-[11px] font-bold text-gray-500 bg-white px-2 py-1 rounded shadow-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Gül Kurusu</span>
+</div>
+<div class="group relative">
+<div class="w-12 h-12 rounded-full bg-[#e0f2f1] shadow-inner cursor-pointer border-[3px] border-white ring-1 ring-gray-200 transition-transform group-hover:scale-110"></div>
+<span class="absolute -bottom-9 left-1/2 -translate-x-1/2 text-[11px] font-bold text-gray-500 bg-white px-2 py-1 rounded shadow-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Nane</span>
+</div>
+<div class="group relative">
+<div class="w-12 h-12 rounded-full bg-[#e3f2fd] shadow-inner cursor-pointer border-[3px] border-white ring-1 ring-gray-200 transition-transform group-hover:scale-110"></div>
+<span class="absolute -bottom-9 left-1/2 -translate-x-1/2 text-[11px] font-bold text-gray-500 bg-white px-2 py-1 rounded shadow-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Gök Mavisi</span>
+</div>
+<div class="group relative">
+<div class="w-12 h-12 rounded-full bg-[#fff8e1] shadow-inner cursor-pointer border-[3px] border-white ring-1 ring-gray-200 transition-transform group-hover:scale-110"></div>
+<span class="absolute -bottom-9 left-1/2 -translate-x-1/2 text-[11px] font-bold text-gray-500 bg-white px-2 py-1 rounded shadow-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Krem</span>
+</div>
+<div class="group relative">
+<div class="w-12 h-12 rounded-full bg-[#f3e5f5] shadow-inner cursor-pointer border-[3px] border-white ring-1 ring-gray-200 transition-transform group-hover:scale-110"></div>
+<span class="absolute -bottom-9 left-1/2 -translate-x-1/2 text-[11px] font-bold text-gray-500 bg-white px-2 py-1 rounded shadow-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-10">Lavanta</span>
+</div>
+</div>
+</div>
+</div>
+</div></div></section>
+<section class="py-28 bg-white dark:bg-[#1a2615]" id="story">
+<div class="max-w-4xl mx-auto px-4 text-center mb-16">
+<span class="text-primary font-bold tracking-[0.2em] uppercase text-xs">Felsefemiz</span>
+<h2 class="text-4xl md:text-5xl font-black mt-6 text-text-main dark:text-white leading-tight">Az Eşya,<br/>Çok <span class="relative inline-block text-primary">Huzur<span class="absolute bottom-1 left-0 w-full h-3 bg-primary/20 -z-10 rounded-full"></span></span></h2>
+</div>
+<div class="max-w-7xl mx-auto px-4 md:px-10 lg:px-40">
+<div class="bg-background-light dark:bg-gray-800/50 rounded-[3rem] p-8 md:p-20 flex flex-col md:flex-row gap-16 items-center border border-secondary shadow-soft">
+<div class="flex-1 space-y-8">
+<p class="text-xl text-text-main dark:text-gray-200 leading-relaxed font-semibold">
+                    Planova, modern dünyanın karmaşasına sessiz bir başkaldırıdır. Biz ajandayı sadece bir planlama aracı olarak değil, zihinsel bir sığınak olarak tasarlıyoruz.
+                </p>
+<p class="text-text-light dark:text-gray-400 leading-loose text-lg">
+                    Minimalist sayfalarımız, size ne yapmanız gerektiğini söylemez; hayalleriniz, hedefleriniz ve düşünceleriniz için size alan açar. Sadelik, odaklanmanın en güçlü anahtarıdır.
+                </p>
+<div class="pt-6 flex flex-col sm:flex-row gap-6">
+<div class="flex items-center gap-3 text-sm font-bold text-gray-700 dark:text-gray-300">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-secondary text-primary">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+                        Yalın Tasarım
+                    </div>
+<div class="flex items-center gap-3 text-sm font-bold text-gray-700 dark:text-gray-300">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-secondary text-primary">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+                        İnsan Odaklı
+                    </div>
+<div class="flex items-center gap-3 text-sm font-bold text-gray-700 dark:text-gray-300">
+<div class="flex items-center justify-center w-8 h-8 rounded-full bg-secondary text-primary">
+<span class="material-symbols-outlined text-lg">check</span>
+</div>
+                        Sürdürülebilir
+                    </div>
+</div>
+</div>
+<div class="flex-1 w-full">
+<div class="w-full h-[500px] rounded-3xl bg-cover bg-center shadow-xl rotate-2 hover:rotate-0 transition-all duration-700 filter grayscale-[0.2]" data-alt="Person writing in a minimalist planner in a calm environment" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB2p2sT4lCG_gYsxe_UQyTE88X9bXL_WzlpIogSro5Ef8nnUqOyzhLpO5bjzb6Tb8zQw_eas3nFlq9EJsRXYvceUfhS5bHclIUoF4eizQXKLMsJZ9WXoFvtBPr2F1wSJf1mWuNEFvRheLZEzIC8ChoACVw5bu7w_2Ypr8X0OB_cx6QU_p6dMhbZNNFfZmhe88puk4Pw-pXS6Wr3cuR98xeDDAsUejlWhCkshWVUvgj0JE3cmC67kMfRDfdiq5OsJ5b2_ASF4FPNdQ");'>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-gradient-to-b from-secondary/30 to-white dark:from-background-dark dark:to-background-dark relative" id="contact">
+<div class="max-w-7xl mx-auto px-4 md:px-10 lg:px-40">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-5xl font-bold text-text-main dark:text-white">Merhaba Deyin</h2>
+<p class="text-text-light dark:text-gray-400 mt-4 text-lg max-w-2xl mx-auto">Soru, öneri veya işbirlikleri için bize her zaman ulaşabilirsiniz.</p>
+</div>
+<div class="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto">
+<div class="flex-1 bg-white dark:bg-[#21181a] p-12 rounded-[2rem] shadow-card border border-white/50 dark:border-gray-800">
+<h3 class="text-2xl font-bold mb-10 text-text-main dark:text-white">İletişim</h3>
+<div class="space-y-10">
+<div class="flex items-start gap-6 group">
+<div class="w-12 h-12 bg-secondary dark:bg-gray-800 rounded-2xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-2xl">location_on</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-white text-lg">Merkez Ofis</h4>
+<p class="text-text-light dark:text-gray-400 mt-1 leading-relaxed">Minimalist Caddesi, No: 45/A<br/>Kadıköy, İstanbul</p>
+</div>
+</div>
+<div class="flex items-start gap-6 group">
+<div class="w-12 h-12 bg-secondary dark:bg-gray-800 rounded-2xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-2xl">mail</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-white text-lg">E-posta</h4>
+<p class="text-text-light dark:text-gray-400 mt-1">merhaba@planova.com</p>
+</div>
+</div>
+<div class="flex items-start gap-6 group">
+<div class="w-12 h-12 bg-secondary dark:bg-gray-800 rounded-2xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-2xl">call</span>
+</div>
+<div>
+<h4 class="font-bold text-text-main dark:text-white text-lg">Telefon</h4>
+<p class="text-text-light dark:text-gray-400 mt-1">+90 212 555 00 00</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1">
+<form class="bg-white dark:bg-[#21181a] p-12 rounded-[2rem] shadow-card border border-white/50 dark:border-gray-800 flex flex-col gap-6 h-full">
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-text-main dark:text-white ml-1" for="name">İsim Soyisim</label>
+<input class="w-full rounded-2xl border-gray-100 bg-background-light dark:border-gray-700 dark:bg-gray-800 dark:text-white py-4 px-5 focus:border-primary focus:ring-primary focus:ring-opacity-20 transition-all text-sm font-medium" id="name" placeholder="Adınız" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-text-main dark:text-white ml-1" for="email">E-posta Adresi</label>
+<input class="w-full rounded-2xl border-gray-100 bg-background-light dark:border-gray-700 dark:bg-gray-800 dark:text-white py-4 px-5 focus:border-primary focus:ring-primary focus:ring-opacity-20 transition-all text-sm font-medium" id="email" placeholder="ornek@email.com" type="email"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-sm font-bold text-text-main dark:text-white ml-1" for="message">Mesajınız</label>
+<textarea class="w-full rounded-2xl border-gray-100 bg-background-light dark:border-gray-700 dark:bg-gray-800 dark:text-white py-4 px-5 focus:border-primary focus:ring-primary focus:ring-opacity-20 transition-all text-sm font-medium min-h-[140px] resize-none" id="message" placeholder="Size nasıl yardımcı olabiliriz?"></textarea>
+</div>
+<button class="mt-auto h-14 w-full bg-primary hover:bg-primary-hover text-white text-base font-bold flex items-center justify-center rounded-2xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 tracking-wide" type="submit">
+                        Mesajı Gönder
+                    </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-white dark:bg-[#21181a] border-t border-gray-100 dark:border-gray-800 pt-16 pb-12">
+<div class="max-w-7xl mx-auto px-4 md:px-10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 p-2 rounded-xl text-primary">
+<span class="material-symbols-outlined text-2xl filled-icon">auto_stories</span>
+</div>
+<span class="font-bold text-2xl text-text-main dark:text-white tracking-tight">Planova</span>
+</div>
+<div class="flex gap-8">
+<a class="text-sm text-text-light dark:text-gray-400 hover:text-primary transition-colors font-semibold" href="#">Instagram</a>
+<a class="text-sm text-text-light dark:text-gray-400 hover:text-primary transition-colors font-semibold" href="#">Twitter</a>
+<a class="text-sm text-text-light dark:text-gray-400 hover:text-primary transition-colors font-semibold" href="#">Pinterest</a>
+</div>
+</div>
+<div class="border-t border-gray-100 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-text-light dark:text-gray-500 font-medium">
+                © 2024 Planova. Sadelikle tasarlandı.
+            </p>
+<div class="flex gap-6">
+<a class="text-xs text-text-light dark:text-gray-500 hover:text-primary transition-colors" href="#">Gizlilik Politikası</a>
+<a class="text-xs text-text-light dark:text-gray-500 hover:text-primary transition-colors" href="#">Kullanım Şartları</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
 
